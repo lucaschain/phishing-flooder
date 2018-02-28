@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+      "node": ">=7.6"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "faker": "^4.1.0",
