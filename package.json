@@ -1,0 +1,18 @@
+{
+  "name": "flood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "faker": "^4.1.0",
+    "gerador-validador-cpf": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node flood.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
