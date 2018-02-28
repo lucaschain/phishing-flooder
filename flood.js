@@ -53,9 +53,9 @@ const logRequestEnd = (response) => {
 }
 
 const requestForData = async (data) => {
-  logRequestStart(data);
+  logRequestStart(data)
   const response = await axios.post('/Seguranca/', data, postOptions())
-  logRequestEnd(response);
+  logRequestEnd(response)
 }
 
 const singleRun = async () => {
@@ -65,7 +65,7 @@ const singleRun = async () => {
 }
 
 (async function infiniteFlood() {
-  let tries = 0;
+  let tries = 0
   while (true) {
     console.log(`session number ${++tries}`)
     await singleRun()
