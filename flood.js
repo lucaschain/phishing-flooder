@@ -21,7 +21,7 @@ const totallyLegitHeaders = () => {
   }
 }
 
-function* totallyLegitPostData() {
+function* totallyLegitRunData() {
   yield {
     usuario: faker.internet.userName().toLowerCase(),
     senha: faker.internet.password(),
@@ -58,8 +58,8 @@ const requestForData = async (data) => {
   logRequestEnd(response);
 }
 
-const singleEntry = async () => {
-  for (postData of totallyLegitPostData()) {
+const singleRun = async () => {
+  for (postData of totallyLegitRunData()) {
     await requestForData(postData)
   }
 }
@@ -68,6 +68,6 @@ const singleEntry = async () => {
   let tries = 0;
   while (true) {
     console.log(`session number ${++tries}`)
-    await singleEntry()
+    await singleRun()
   }
 })()
